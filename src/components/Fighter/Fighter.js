@@ -52,11 +52,25 @@ class Fighter extends Component {
       .catch(error => {
         this.setState({ error, loading: false });
       });
+
+    setTimeout(() => {
+      this.goToGame(id);
+    }, 10000);
   }
 
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown)
+  }
+
+  goToGame = (id) => {
+
+
+    const { from } = {
+      from: { pathname: `${routes.GAME}/${id}` },
+    };
+
+    this.props.history.push(from);
   }
 
   handleKeyDown(e) {
