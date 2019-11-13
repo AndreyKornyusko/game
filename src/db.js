@@ -1,4 +1,4 @@
-const fighters = [
+ const fighters = [
   { id: "ShangTsung", name: "Shang Tsung", img: "https://vignette.wikia.nocookie.net/mortalkombat/images/a/a4/Shang3.jpg/revision/latest?cb=20090310024111&path-prefix=es" },
   { id: "Sindel", name: "Sindel", img: "https://vignette.wikia.nocookie.net/mortalkombat/images/6/61/Sindelumk3.jpg/revision/latest?cb=20090310023724&path-prefix=es" },
   { id: "Jax", name: "Jax", img: "https://vignette.wikia.nocookie.net/mortalkombat/images/4/41/Jax3.jpg/revision/latest?cb=20090310024324&path-prefix=es" },
@@ -15,3 +15,5 @@ const fighters = [
   { id: "KungLao", name: "Kung Lao", img: "https://vignette.wikia.nocookie.net/mortalkombat/images/e/ea/Kunglaoo.gif/revision/latest?cb=20081216075739&path-prefix=es" },
   { id: "Kabal", name: "Kabal", img: "https://vignette.wikia.nocookie.net/mortalkombat/images/6/69/Kabal122.gif/revision/latest?cb=20081217062431&path-prefix=es" }
 ];
+
+export default fighters;

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import './FighterList.css';
 
+import List from '../FighterList/list/List';
+
 import Loader from '../../components/loader/loader';
 import routes from '../../configs/routes';
+import hardcodedItems from '../../db';
 
 import * as API from '../../services/api';
 
@@ -18,6 +21,7 @@ class FighterList extends Component {
       cursor: 0,
       loading: true,
       fighters: [],
+      error:'',
     }
   }
 
@@ -79,35 +83,26 @@ class FighterList extends Component {
         this.goToGame(activeFighterID);
       }, 10000);
 
-    } 
+    }
   }
 
 
 
   render() {
-    const { cursor, fighters, loading } = this.state
+    const { cursor, fighters, loading, error } = this.state
 
     return (
       <div className="fightersWrap">
         <h2 className="mainTitle">select your fighter</h2>
         {loading && <Loader />}
-        <ul className="fighterList">
-          {
-            fighters.map((item, i) => (
-              <li
-                id={item.id}
-                key={item.id}
-                className={cursor === i ? 'activeItem' : 'item'}
-              >
-                <Link to={`${routes.FIGHTER}/${item.id}`}>
-                <div className="imgWrap">
-                  <img className="fighterImage" src={item.img} alt="fighter image" />
-                </div>
-                </Link>
-              </li>
-            ))
-          }
-        </ul>
+        {error &&
+          (<div>
+            <div>{error}</div>
+            <List items={hardcodedItems} cursor={cursor}/>
+          </div>)}
+          
+          <List items={fighters} cursor={cursor}/>
+
         <audio className="sound" autoplay="autoplay" controls="controls">
           <source src={sound} />
         </audio>

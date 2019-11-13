@@ -27,7 +27,7 @@ const icons = [
 class Fighter extends Component {
   constructor(props) {
     super(props)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
+    // this.handleKeyDown = this.handleKeyDown.bind(this)
     this.state = {
       cursor: 0,
       fighter: [],
@@ -41,7 +41,20 @@ class Fighter extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
+    // window.addEventListener('keydown', this.handleKeyDown);
+
+    this.runOnKeys(
+      () => {
+        this.setState({ isQwertyClick: true });
+      },
+      "KeyQ",
+      "KeyW",
+      "KeyE",
+      "KeyR",
+      // "KeyT",
+      "KeyY"
+    );
+
 
     const id = this.props.match.params.id;
 
@@ -53,19 +66,41 @@ class Fighter extends Component {
         this.setState({ error, loading: false });
       });
 
-    // setTimeout(() => {
-    //   this.goToGame(id);
-    // }, 10000);
   }
 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown)
+    // window.removeEventListener('keydown', this.handleKeyDown)
   }
 
+
+
+  runOnKeys = (func, ...codes) => {
+    let pressed = new Set();
+
+    window.addEventListener('keydown', function (event) {
+
+      pressed.add(event.code);
+
+      for (let code of codes) {
+        if (!pressed.has(code)) {
+          return;
+        }
+      }
+
+      pressed.clear();
+
+      func();
+    });
+
+    window.addEventListener('keyup', function (event) {
+      pressed.delete(event.code);
+    });
+  }
+
+
+
   goToGame = (id) => {
-
-
     const { from } = {
       from: { pathname: `${routes.GAME}/${id}` },
     };
@@ -73,44 +108,6 @@ class Fighter extends Component {
     this.props.history.push(from);
   }
 
-  handleKeyDown(e) {
-
-    function runOnKeys(func, ...codes) {
-      let pressed = new Set();
-
-      window.addEventListener('keydown', function (event) {
-
-        pressed.add(event.code);
-
-        for (let code of codes) {
-          if (!pressed.has(code)) {
-            return;
-          }
-        }
-
-        pressed.clear();
-
-        func();
-      });
-
-      window.addEventListener('keyup', function (event) {
-        pressed.delete(event.code);
-      });
-
-    }
-
-    runOnKeys(
-      () => {
-        this.setState({ isQwertyClick: true });
-      },
-      "KeyQ",
-      "KeyW",
-      "KeyE",
-      "KeyR",
-      "KeyT",
-      "KeyY"
-    );
-  }
 
   render() {
     const { cursor, leftFighterName, rightFighterName, leftimg, rightimg, loading, isQwertyClick } = this.state

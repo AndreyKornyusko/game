@@ -15,46 +15,6 @@
   margin-bottom: 10px;
 }
 
-.fighterList {
-  display: flex;
-  flex-wrap: wrap;
-  width: 700px;
-  margin: 0 auto;
-  list-style: none;
-  background-color: rgb(110, 109, 109);
-}
-
-.item,
-.activeItem {
-  list-style: none;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 140px;
-}
-
-.item {
-  background-color: rgb(156, 154, 154);
-}
-
-.activeItem {
-  background-color: rgb(24, 230, 75);
-}
-
-.imgWrap {
-  width: 120px;
-  height: 120px;
-}
-
-.fighterImage {
-  /* width: 100%;
-  height: auto; */
-  width: 120px;
-  height: 120px;
-}
-
 .sound {
   display: none;
 }
