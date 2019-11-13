@@ -53,9 +53,9 @@ class Fighter extends Component {
         this.setState({ error, loading: false });
       });
 
-    setTimeout(() => {
-      this.goToGame(id);
-    }, 10000);
+    // setTimeout(() => {
+    //   this.goToGame(id);
+    // }, 10000);
   }
 
 
@@ -118,7 +118,7 @@ class Fighter extends Component {
 
     // console.log('fighter', fighter)
     // console.log('fighter props', this.props);
-    // console.log('isQwertyClick', isQwertyClick)
+    console.log('isQwertyClick', isQwertyClick)
 
     return (
       <div className={styles.fightersMainWrap}>

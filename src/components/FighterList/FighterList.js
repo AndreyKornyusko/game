@@ -82,6 +82,8 @@ class FighterList extends Component {
     } 
   }
 
+
+
   render() {
     const { cursor, fighters, loading } = this.state
 
