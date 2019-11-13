@@ -1,0 +1,6 @@
+.mainWrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(110, 109, 109);
+  min-height: 100vh;
+}

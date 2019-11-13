@@ -1,6 +1,7 @@
-# Полезные ссылки
+## How to use
 
-- [reactjs.org - Введение в хуки](https://ru.reactjs.org/docs/hooks-intro.html)
-- [Making Sense of React Hooks by Dan Abramov](https://dev.to/dan_abramov/making-sense-of-react-hooks-2eib)
-- [A Complete Guide to useEffect by Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/)
-- [react-use - репозиторий готовых кастомных хуков](https://github.com/streamich/react-use)
+* Download, clone or fork this repo
+* In terminal, navigate to the root folder
+* Run **npm i**, this will install all dependencies and get rid of junk files
+* After all deps are installed, start developement with **npm start** command
+* **npm run build** will prepare your project for deployment

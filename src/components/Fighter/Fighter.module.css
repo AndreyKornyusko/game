@@ -1,0 +1,77 @@
+.dragonIcon {
+  width: 70px;
+  height: 70px;
+}
+
+.iconList {
+  width: 500px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.imgWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.mainTitle {
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 45px;
+}
+
+.userName {
+  color: #fff;
+}
+.sound {
+  display: none;
+}
+
+.fightersMainWrap {
+  margin: 0 auto;
+}
+
+.fightersWrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.FighterName {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.leftFighter,
+.rightFighter {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftFighter {
+}
+
+.fighterimgWrap {
+  width: 90px;
+}
+
+.fighterImg {
+  display: block;
+  width: 150px;
+  height: auto;
+}
