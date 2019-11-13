@@ -97,11 +97,11 @@ class FighterList extends Component {
                 key={item.id}
                 className={cursor === i ? 'activeItem' : 'item'}
               >
-                <Link to={`${routes.FIGHTER}/${item.id}`}></Link>
+                <Link to={`${routes.FIGHTER}/${item.id}`}>
                 <div className="imgWrap">
                   <img className="fighterImage" src={item.img} alt="fighter image" />
                 </div>
-                <Link/>
+                </Link>
               </li>
             ))
           }
