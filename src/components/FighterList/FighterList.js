@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import './FighterList.css';
+import styles from './FighterList.module.css';
 
 import List from '../FighterList/list/List';
 
@@ -92,18 +92,17 @@ class FighterList extends Component {
     const { cursor, fighters, loading, error } = this.state
 
     return (
-      <div className="fightersWrap">
-        <h2 className="mainTitle">select your fighter</h2>
+      <div className={styles.fightersWrap}>
+      <h2 className={styles.mainTitle}>select your fighter</h2>
         {loading && <Loader />}
         {error &&
           (<div>
             <div>{error}</div>
             <List items={hardcodedItems} cursor={cursor}/>
           </div>)}
-          
           <List items={fighters} cursor={cursor}/>
 
-        <audio className="sound" autoplay="autoplay" controls="controls">
+        <audio className={styles.sound} autoplay="autoplay" controls="controls">
           <source src={sound} />
         </audio>
       </div >
