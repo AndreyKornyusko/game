@@ -50,7 +50,7 @@ class FighterList extends Component {
     API.getAllFightersItems()
       .then(fighters => {
         this.setState({ fighters, loading: false });
-        console.log('fighters', fighters)
+        // console.log('fighters', fighters)
       })
       .catch(error => {
         this.setState({ error, loading: false });
@@ -116,7 +116,6 @@ class FighterList extends Component {
 
   render() {
     const { cursor, fighters, loading, error, leftFighterName, rightFighterName, leftimg, rightimg } = this.state
-    console.log('leftimg', leftimg)
     return (
       <div className={styles.fightersMainWrap}>
         <h2 className={styles.mainTitle}>select your fighter</h2>
