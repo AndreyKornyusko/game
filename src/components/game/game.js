@@ -15,7 +15,7 @@ class Game extends Component {
       leftFighterName: '',
       rightFighterName: 'Scorpion',
       leftimg: '',
-      rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/9/96/Scormk3.jpg/revision/latest/scale-to-width-down/55?cb=20081210203559&path-prefix=es',
+      rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/c/c6/Sco54.gif/revision/latest?cb=20091221132258&path-prefix=es',
       loading: true,
     }
   }
@@ -25,7 +25,7 @@ class Game extends Component {
 
     API.getFightersItemById(id)
       .then(fighter => {
-        this.setState({ fighter, leftFighterName: fighter.name, leftimg: fighter.img, loading: false });
+        this.setState({ fighter, leftFighterName: fighter.name, leftimg: fighter.gameimg, loading: false });
       })
       .catch(error => {
         this.setState({ error, loading: false });
@@ -42,13 +42,13 @@ class Game extends Component {
         <h2 className={styles.title}>Let's start the game</h2>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
-            <h3 className={styles.FighterName}>{leftFighterName}</h3>
+            {/* <h3 className={styles.FighterName}>{leftFighterName}</h3> */}
             <div className={styles.fighterimgWrap}>
               <img className={styles.fighterImg} src={leftimg} alt="fighter img" />
             </div>
           </div>
           <div className={styles.rightFighter}>
-            <h3 className={styles.FighterName}>{rightFighterName}</h3>
+            {/* <h3 className={styles.FighterName}>{rightFighterName}</h3> */}
             <div className={styles.fighterimgWrap}>
               <img className={styles.fighterImg} src={rightimg} alt="fighter img" />
             </div>

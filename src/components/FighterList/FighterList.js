@@ -41,7 +41,7 @@ class FighterList extends Component {
   findFighterById = (id) => {
     const { fighters } = this.state;
     const selectedFighter = fighters.find(item => item.id === id);
-    this.setState({ leftimg: selectedFighter.img, leftFighterName: selectedFighter.name })
+    this.setState({ leftimg: selectedFighter.vsimg, leftFighterName: selectedFighter.name })
   }
 
   componentDidMount() {

@@ -34,7 +34,7 @@ class Fighter extends Component {
       leftFighterName: '',
       rightFighterName: 'Scorpion',
       leftimg: '',
-      rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/9/96/Scormk3.jpg/revision/latest/scale-to-width-down/55?cb=20081210203559&path-prefix=es',
+      rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/c/c6/Sco54.gif/revision/latest?cb=20091221132258&path-prefix=es',
       loading: true,
       isQwertyClick: false,
     }
@@ -60,7 +60,7 @@ class Fighter extends Component {
 
     API.getFightersItemById(id)
       .then(fighter => {
-        this.setState({ fighter, leftFighterName: fighter.name, leftimg: fighter.img, loading: false });
+        this.setState({ fighter, leftFighterName: fighter.name, leftimg: fighter.vsimg, loading: false });
       })
       .catch(error => {
         this.setState({ error, loading: false });
@@ -111,7 +111,7 @@ class Fighter extends Component {
 
   render() {
     const { cursor, leftFighterName, rightFighterName, leftimg, rightimg, loading, isQwertyClick } = this.state
-    const { batleNumber } = this.props;
+    const { batleNumber="1" } = this.props;
 
     // console.log('fighter', fighter)
     // console.log('fighter props', this.props);
