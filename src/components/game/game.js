@@ -38,8 +38,8 @@ class Game extends Component {
     const { leftFighterName, rightFighterName, leftimg, rightimg, loading } = this.state;
 
     return (
-      <div>
-        <h2 className={styles.title}>Let's start the game</h2>
+      <div className={styles.mainWrapper}>
+        {/* <h2 className={styles.title}>Let's start the game</h2> */}
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
             {/* <h3 className={styles.FighterName}>{leftFighterName}</h3> */}

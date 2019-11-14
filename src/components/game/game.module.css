@@ -1,3 +1,16 @@
+
+.mainWrapper{
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 230px;
+  padding-bottom: 40px;
+  background-image: url('../../assets/img/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 .title {
   color: #fff;
   text-align: center;
