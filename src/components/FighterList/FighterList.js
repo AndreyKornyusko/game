@@ -55,7 +55,17 @@ class FighterList extends Component {
       .catch(error => {
         this.setState({ error, loading: false });
       });
+
+
+    var music = document.getElementById("myAudio");
+
+    function playAudio() {
+      music.play();
+    };
+    playAudio()
   }
+
+
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown)
   }
@@ -140,7 +150,7 @@ class FighterList extends Component {
           </div>
         </div>
 
-        <audio className={styles.sound} autoplay="autoplay" controls="controls">
+        <audio id="myAudio" className={styles.sound} autoplay="autoplay" controls="controls">
           <source src={sound} />
         </audio>
       </div >

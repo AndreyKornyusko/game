@@ -6,7 +6,8 @@ import routes from '../../configs/routes';
 import * as API from '../../services/api';
 
 
-import sound from '../../assets/sounds/TheSubway.mp3';
+import sound from '../../assets/sounds/game.mp3';
+import roundone from '../../assets/sounds/mp3';
 
 class Game extends Component {
   constructor(props) {
@@ -42,21 +43,24 @@ class Game extends Component {
         {/* <h2 className={styles.title}>Let's start the game</h2> */}
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
-            {/* <h3 className={styles.FighterName}>{leftFighterName}</h3> */}
-            <div className={styles.fighterimgWrap}>
-              <img className={styles.fighterImg} src={leftimg} alt="fighter img" />
+            <div className={styles.fighterimgWrap}
+            >
+              <img className={styles.fighterImgLeft} src={leftimg} alt="fighter img" />
             </div>
           </div>
           <div className={styles.rightFighter}>
-            {/* <h3 className={styles.FighterName}>{rightFighterName}</h3> */}
             <div className={styles.fighterimgWrap}>
-              <img className={styles.fighterImg} src={rightimg} alt="fighter img" />
+              <img className={styles.fighterImgRight} src={rightimg} alt="fighter img" />
             </div>
           </div>
         </div>
         <audio className={styles.sound} autoplay="autoplay" controls="controls">
           <source src={sound} />
         </audio>
+        <audio className={styles.sound} autoplay="autoplay" controls="controls">
+          <source src={roundone} />
+        </audio>
+
 
       </div>
     )

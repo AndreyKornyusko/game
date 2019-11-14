@@ -27,9 +27,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(185, 182, 180);
   border: 1px solid #000;
 }
 
@@ -49,8 +49,6 @@
   display: none;
 }
 
-
-
 .fightersWrap {
   display: flex;
   flex-wrap: nowrap;
@@ -67,7 +65,7 @@
 
 .leftFighter,
 .rightFighter {
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,10 +74,56 @@
 
 .fighterimgWrap {
   width: 150px;
+  /* height: 300px; */
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.fighterImg {
+@keyframes fighterRight {
+
+  from {transform: translate(0);}
+    to { transform: translate(-120px, 0);}
+  /* 0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-120px, 0);
+  }
+  100% {
+    transform: translate(-130px, 0);
+  } */
+}
+
+@keyframes fighterLeft {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(120px, 0);
+  }
+  100% {
+    transform: translate(130px, 0);
+  }
+}
+
+.fighterImgRight,
+.fighterImgLeft {
   display: block;
   width: 150px;
   height: auto;
+}
+
+.fighterImgRight {
+  position: relative;
+  right: 0;
+  width: 130px;
+  /* animation: fighterRight 1000ms infinite linear; */
+  transition: right 1s cubic-bezier(0, 0, 1, 1);
+}
+
+.fighterImgLeft {
+  position: relative;
+  left: 0;
+  /* animation: fighterLeft 500ms linear; */
+  transition: left 1s cubic-bezier(0, 0, 1, 1);
 }
