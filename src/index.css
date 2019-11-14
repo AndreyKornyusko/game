@@ -18,6 +18,13 @@ code {
     monospace;
 }
 
+body {
+  background-color: rgb(110, 109, 109);
+
+}
+
 .active {
   color: red;
 }
+
+

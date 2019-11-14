@@ -119,7 +119,7 @@ class Fighter extends Component {
 
     return (
       <div className={styles.fightersMainWrap}>
-        <h2 className={styles.mainTitle}>Batle {batleNumber}</h2>
+        <h2 className={styles.mainTitle}>Battle {batleNumber}</h2>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
             <h3 className={styles.FighterName}>{leftFighterName}</h3>
