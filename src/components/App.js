@@ -5,6 +5,12 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import routes from '../configs/routes';
 import './App.css';
 
+
+
+const StartPage = lazy(() =>
+  import('../pages/StartPage/StartPage' /* webpackChunkName: "StartPage-page" */),
+);
+
 const MainPage = lazy(() =>
   import('../pages/MainPage' /* webpackChunkName: "main-page" */),
 );
@@ -21,6 +27,7 @@ const App = () => (
   <div className="mainWrapper">
     <Suspense fallback={<div></div>}>
       <Switch>
+        <Route exact path={routes.START} component={StartPage} />
         <Route exact path={routes.MAIN} component={MainPage} />
         <Route exact path={routes.FIGHTERID} component={FighterPage} />
         <Route exact path={routes.GAMEID} component={GamePage} />

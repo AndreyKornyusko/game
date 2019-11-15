@@ -97,14 +97,14 @@ class Game extends Component {
   handleClick = (e) => {
     this.setState({ isFinish: true, keyPressNotify: false });
 
-    const music = document.getElementById("finishHim");
-    const gameMusic = document.getElementById("gameAudio");
 
     function stopMusic() {
+      const gameMusic = document.getElementById("gameAudio");
       gameMusic.pause()
     }
 
     function playAudio() {
+      const music = document.getElementById("finishHim");
       music.play();
     };
 
@@ -131,6 +131,15 @@ class Game extends Component {
       setTimeout(() => {
         this.setState({ gameOverNotify: true })
       }, 3000);
+
+      setTimeout(() => {
+        const music = document.getElementById("laugh");
+        function playAudio() {
+          music.play();
+        };
+        playAudio();
+      }, 2000);
+  
 
       setTimeout(() => {
         const { from } = {
@@ -181,7 +190,7 @@ class Game extends Component {
           {finishNotify && "FINISH HIM!"}
           {keyPressNotify && "Press key F or click on your fighter for FINISH HIM!"}
           {gameOverNotify && "GAME OVER"}
-          {fighterNameNotify && `${fighterName} WIN`}
+          {fighterNameNotify && `${fighterName} WINS`}
         </div>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
@@ -242,6 +251,9 @@ class Game extends Component {
         </audio>
         <audio id="fight" className={styles.sound} controls="controls">
           <source src={fightSound} />
+        </audio>
+        <audio id="laugh" className={styles.sound} controls="controls">
+          <source src="https://www.101soundboards.com/storage/board_sounds_rendered/69680.mp3?md5=sbR7cZhFJ-V_tl-B1Ffqlg&expires=1573853918" />
         </audio>
 
       </div>
