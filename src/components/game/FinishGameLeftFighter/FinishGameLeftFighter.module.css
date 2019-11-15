@@ -1,0 +1,25 @@
+@keyframes fighterLeft {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(210px, -30px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.fighterImgLeft {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.fighterImgLeft {
+  position: relative;
+  left: 0;
+  animation: fighterLeft 500ms infinite cubic-bezier(0, 0, 1, 1);
+  /* transition: left 1s cubic-bezier(0, 0, 1, 1); */
+}
+

@@ -1,0 +1,12 @@
+.fighterImgLeft {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+
+.fighterImgLeft {
+  position: relative;
+  left: 0;
+  transition: left 1s cubic-bezier(0, 0, 1, 1);
+}

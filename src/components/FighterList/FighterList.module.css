@@ -21,6 +21,16 @@
   margin-bottom: 10px;
 }
 
+.subTitle {
+  color: #fff;
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
 .sound {
   display: none;
 }
@@ -34,7 +44,7 @@
 
 .fighterWrap {
   display: flex;
- justify-content: center;
+  justify-content: center;
   flex-wrap: nowrap;
   margin: 0 auto;
   margin-bottom: 30px;

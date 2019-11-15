@@ -132,6 +132,7 @@ class FighterList extends Component {
     return (
       <div className={styles.fightersMainWrap}>
         <h2 className={styles.mainTitle}>select your fighter</h2>
+        <h3 className={styles.subTitle}>Press ARROWKEYS for select fighter and then press ENTER</h3>
         {loading && <Loader />}
         {error &&
           (<div>
