@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import styles from './Fighter.module.css';
 import routes from '../../configs/routes';
 import * as API from '../../services/api';
-import cabal from '../../assets/img/Kabal_s.gif'
+import scorpion from '../../assets/img/Sco.png'
 
 import sound from '../../assets/sounds/VSScreen.mp3';
 
@@ -36,7 +36,7 @@ class Fighter extends Component {
       leftFighterName: '',
       rightFighterName: 'Scorpion',
       leftimg: '',
-      rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/2/26/Victorriscor03.png/revision/latest?cb=20090519232037&path-prefix=es',
+      rightimg: scorpion,
 
       loading: true,
       isQwertyClick: false,
