@@ -42,10 +42,12 @@ class Game extends Component {
 
       isFinish: false,
       isGameOver: false,
-      isFall:false,
-      keyPressNotify:false,
-      finishNotify:false,
-      gameOverNotify:false,
+      isFall: false,
+      keyPressNotify: false,
+      finishNotify: false,
+      gameOverNotify: false,
+      fighterNameNotify: false,
+      fighterName: ""
     }
   }
 
@@ -79,6 +81,7 @@ class Game extends Component {
           leftFighterName: fighter.name,
           leftimg: fighter.gameimg,
           leftimgStart: fighter.vsimg,
+          fighterName: fighter.name,
           loading: false
         });
       })
@@ -91,39 +94,58 @@ class Game extends Component {
     window.removeEventListener('keydown', this.handleKeyDown)
   }
 
-  handleKeyDown = (e) => {
-    if (e.code === "KeyF" || e.key === 'ArrowRight') {
-      this.setState({ isFinish: true, keyPressNotify:false });
+  handleClick = (e) => {
+    this.setState({ isFinish: true, keyPressNotify: false });
 
-      const music = document.getElementById("finishHim");
-      const gameMusic = document.getElementById("gameAudio");
+    const music = document.getElementById("finishHim");
+    const gameMusic = document.getElementById("gameAudio");
 
-      function stopMusic() {
-        gameMusic.pause()
-      }
+    function stopMusic() {
+      gameMusic.pause()
+    }
 
-      function playAudio() {
-        music.play();
-      };
+    function playAudio() {
+      music.play();
+    };
 
-      stopMusic();
-      playAudio();
+    stopMusic();
+    playAudio();
 
+
+    setTimeout(() => {
+      this.setState({ isGameOver: true });
 
       setTimeout(() => {
-        this.setState({ isGameOver: true });
+        this.setState({ isFall: true })
+      }, 5);
+
+      setTimeout(() => {
+        this.setState({ fighterNameNotify: true })
 
         setTimeout(() => {
-          this.setState({ isFall: true })
-        }, 5);
+          this.setState({ fighterNameNotify: false })
+        }, 1000);
 
-        setTimeout(() => {
-          this.setState({ gameOverNotify: true })
-        }, 2000);
+      }, 1000);
 
-  
-      }, 2200);
+      setTimeout(() => {
+        this.setState({ gameOverNotify: true })
+      }, 3000);
 
+      setTimeout(() => {
+        const { from } = {
+          from: { pathname: `${routes.MAIN}` },
+        };
+        this.props.history.push(from);
+      }, 6000);
+
+    }, 2200);
+  }
+
+  handleKeyDown = (e) => {
+    if (e.code === "KeyF" || e.key === 'ArrowRight') {
+
+      this.handleClick(e)
     }
   }
 
@@ -147,16 +169,19 @@ class Game extends Component {
       isFall,
       keyPressNotify,
       finishNotify,
-      gameOverNotify
+      gameOverNotify,
+      fighterNameNotify,
+      fighterName
 
     } = this.state;
 
     return (
       <div className={styles.mainWrapper}>
         <div className={styles.notify}>
-          {finishNotify&&"FINISH HIM!"}
-          {keyPressNotify&&"Press key F to FINISH HIM!"}
-          {gameOverNotify&&"GAME OVER"}
+          {finishNotify && "FINISH HIM!"}
+          {keyPressNotify && "Press key F or click on your fighter for FINISH HIM!"}
+          {gameOverNotify && "GAME OVER"}
+          {fighterNameNotify && `${fighterName} WIN`}
         </div>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
@@ -170,7 +195,11 @@ class Game extends Component {
 
                 (
                   <div className={styles.fighterimgWrap}>
-                    <img className={styles.fighterImgLeft} src={leftimg} alt="fighter img" />
+                    <img className={styles.fighterImgLeft}
+                      src={leftimg}
+                      alt="fighter img"
+                      onClick={this.handleClick}
+                    />
                   </div>
                 )
               ) :
@@ -184,9 +213,9 @@ class Game extends Component {
             {isGameStart ?
               (isFinish ?
                 (isGameOver ?
-                  <GameOverRightFighter 
-                  img={rightimgGameOver} 
-                  isFall={isFall}
+                  <GameOverRightFighter
+                    img={rightimgGameOver}
+                    isFall={isFall}
                   /> :
                   <FinishGameRightFighter img={rightimgFinish} />
                 ) :

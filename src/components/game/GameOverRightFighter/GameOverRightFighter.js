@@ -6,7 +6,7 @@ const GameOverRightFighter = ({ img, isFall }) => (
     <img className={styles.fighterImgRight} src={img} alt="fighter img"
       style={{
         right: isFall && '-60px',
-        bottom: isFall && '-60px',
+        bottom: isFall && '-120px',
       }}
 
     />

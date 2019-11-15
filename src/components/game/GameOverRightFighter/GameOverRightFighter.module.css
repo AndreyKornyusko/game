@@ -9,5 +9,5 @@
   right: 0;
   bottom: 0;
   width: 300px;
-  transition: right 0.2s cubic-bezier(0, 0, 1, 1);
+  transition: right 0.5s cubic-bezier(0, 0, 1, 1);
 }
