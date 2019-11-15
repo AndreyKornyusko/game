@@ -118,6 +118,11 @@ class Fighter extends Component {
     this.props.history.push(from);
   }
 
+  hangleIconClick = () => {
+    const id = this.props.match.params.id;
+    this.goToGame(id)
+  }
+
 
   render() {
     const { cursor, leftFighterName, rightFighterName, leftimg, rightimg, loading, isQwertyClick, loaded } = this.state
@@ -162,7 +167,7 @@ class Fighter extends Component {
                 key={item.id}
                 className={cursor === i ? 'activeIcon' : 'icon'}
               >
-                <div className={styles.imgWrap}>
+                <div className={styles.imgWrap} onClick={this.hangleIconClick}>
                   {!isQwertyClick ? <DragonIcon /> : <InYang />}
                 </div>
               </li>

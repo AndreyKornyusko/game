@@ -57,7 +57,7 @@ class FighterList extends Component {
       });
 
 
-    var music = document.getElementById("myAudio");
+    const music = document.getElementById("myAudio");
 
     function playAudio() {
       music.play();
@@ -112,10 +112,23 @@ class FighterList extends Component {
     }
   }
 
+  handleFighterClick = (e) => {
+    console.log('e target', e.target)
+    const id = e.target.id;
+    // console.log('id',id)
 
+    setTimeout(() => {
+      const { from } = {
+        from: { pathname: `${routes.GAME}/${id}` },
+      };
+
+      this.props.history.push(from);
+    }, 10000);
+  }
 
   render() {
     const { cursor, fighters, loading, error, leftFighterName, rightFighterName, leftimg, rightimg } = this.state
+    const { handleFighterClick } = this.props;
     return (
       <div className={styles.fightersMainWrap}>
         <h2 className={styles.mainTitle}>select your fighter</h2>
@@ -136,7 +149,10 @@ class FighterList extends Component {
             >
             </div>
           </div>
-          <List items={fighters} cursor={cursor} />
+          <List
+            items={fighters}
+            cursor={cursor}
+          />
 
           <div className={styles.rightFighter}>
             <h3 className={styles.FighterName}>{rightFighterName}</h3>

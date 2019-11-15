@@ -31,6 +31,11 @@
   height: 60px;
   background-color: rgb(185, 182, 180);
   border: 1px solid #000;
+  cursor: pointer;
+}
+
+.imgWrap:hover {
+  background-color: rgb(233, 230, 229);
 }
 
 .mainTitle {

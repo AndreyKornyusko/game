@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './list.css';
 import routes from '../../../configs/routes';
 
-const List = ({items, cursor }) => (
+const List = ({items, cursor}) => (
   <ul className="fighterList">
     {
       items.map((item, i) => (

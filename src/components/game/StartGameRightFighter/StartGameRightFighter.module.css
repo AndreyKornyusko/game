@@ -1,0 +1,13 @@
+.fighterImgRight {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.fighterImgRight {
+  position: relative;
+  right: 0;
+  width: 150px;
+  transition: right 1s cubic-bezier(0, 0, 1, 1);
+}
+
