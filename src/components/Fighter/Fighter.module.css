@@ -83,15 +83,6 @@
 
   from {transform: translate(0);}
     to { transform: translate(-120px, 0);}
-  /* 0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(-120px, 0);
-  }
-  100% {
-    transform: translate(-130px, 0);
-  } */
 }
 
 @keyframes fighterLeft {

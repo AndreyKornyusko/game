@@ -51,11 +51,6 @@ class Fighter extends Component {
       this.setState({ loaded: true })
     }, 100);
 
-    setTimeout(() => {
-      const id = this.props.match.params.id;
-      this.goToGame(id);
-    }, 10000);
-
 
     this.runOnKeys(
       () => {
