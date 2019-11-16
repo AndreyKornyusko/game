@@ -9,7 +9,8 @@ import * as API from '../../services/api';
 import sound from '../../assets/sounds/game.mp3';
 import roundone from '../../assets/sounds/mp3';
 import finishSound from '../../assets/sounds/FinishHim.mp3';
-import fightSound from '../../assets/sounds/mp3(fight)'
+import fightSound from '../../assets/sounds/mp3(fight)';
+import laugh from '../../assets/sounds/laugh.mp3';
 import scorpion from '../../assets/img/Sco.png';
 import scorpiondie from '../../assets/img/Scorfa.png';
 
@@ -253,7 +254,7 @@ class Game extends Component {
           <source src={fightSound} />
         </audio>
         <audio id="laugh" className={styles.sound} controls="controls">
-          <source src="" />
+          <source src={laugh} />
         </audio>
 
       </div>
