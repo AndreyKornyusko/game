@@ -1,6 +1,6 @@
 export default Object.freeze({
-  MAIN: '/',
-  START: '/startpage',
+  MAIN: '/menu',
+  START: '/',
   FIGHTER: '/fighter',
   FIGHTERID:'/fighter/:id',
   GAME:'/game',
