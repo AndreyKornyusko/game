@@ -13,7 +13,7 @@ class Start extends Component {
 
     setTimeout(() => {
       this.goToGame(id)
-    }, 3000);
+    }, 5000);
 
   }
 

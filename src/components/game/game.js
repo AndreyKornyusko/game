@@ -253,7 +253,7 @@ class Game extends Component {
           <source src={fightSound} />
         </audio>
         <audio id="laugh" className={styles.sound} controls="controls">
-          <source src="https://www.101soundboards.com/storage/board_sounds_rendered/69680.mp3?md5=sbR7cZhFJ-V_tl-B1Ffqlg&expires=1573853918" />
+          <source src="" />
         </audio>
 
       </div>
