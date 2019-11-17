@@ -29,6 +29,7 @@ class Start extends Component {
 
     return (
       <div className={styles.MainWrap}>
+        <h1 className={styles.title}>welcome to mortal combat</h1>
         <audio id="startsound" className={styles.sound} autoplay="autoplay" controls="controls">
           <source src="https://d1490khl9dq1ow.cloudfront.net/audio/sfx/mp3preview/BsTwCwBHBjzwub4i4/jg-032316-sfx-huge-gong_NWM.mp3" />
         </audio>

@@ -1,3 +1,17 @@
+.MainWrap {
+padding-top: 70px;
+}
+
 .sound {
   display: none;
+}
+
+.title {
+margin: 0 auto;
+padding-right: 20px;
+padding-left: 20px;
+text-align: center;
+color: #fff;
+font-family: 'Trade Winds', cursive;
+font-size: 50px;
 }

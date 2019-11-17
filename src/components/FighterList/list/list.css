@@ -10,6 +10,11 @@
   background-color: rgb(110, 109, 109);
 }
 
+@keyframes animationBg {
+  from { background-color: transparent; }
+  to {   background-color: rgb(24, 230, 75);}
+}
+
 .item,
 .activeItem {
   list-style: none;
@@ -26,7 +31,8 @@
 }
 
 .activeItem {
-  background-color: rgb(24, 230, 75);
+  animation: animationBg 900ms infinite cubic-bezier(1, 1, 1, 1);
+  /* background-color: rgb(24, 230, 75); */
 }
 
 .imgWrap {

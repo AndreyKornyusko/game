@@ -48,7 +48,8 @@ class Game extends Component {
       finishNotify: false,
       gameOverNotify: false,
       fighterNameNotify: false,
-      fighterName: ""
+      fighterName: "",
+      isFinishHim: false,
     }
   }
 
@@ -98,6 +99,12 @@ class Game extends Component {
   handleClick = (e) => {
     this.setState({ isFinish: true, keyPressNotify: false });
 
+    this.setState({ isFinishHim: true });
+
+    setTimeout(() => {
+      this.setState({ isFinishHim: false });
+    }, 2000);
+
 
     function stopMusic() {
       const gameMusic = document.getElementById("gameAudio");
@@ -125,13 +132,13 @@ class Game extends Component {
 
         setTimeout(() => {
           this.setState({ fighterNameNotify: false })
-        }, 1000);
+        }, 2000);
 
       }, 1000);
 
       setTimeout(() => {
         this.setState({ gameOverNotify: true })
-      }, 3000);
+      }, 4000);
 
       setTimeout(() => {
         const music = document.getElementById("laugh");
@@ -181,7 +188,8 @@ class Game extends Component {
       finishNotify,
       gameOverNotify,
       fighterNameNotify,
-      fighterName
+      fighterName,
+      isFinishHim
 
     } = this.state;
 
@@ -190,8 +198,11 @@ class Game extends Component {
         <div className={styles.notify}>
           {finishNotify && "FINISH HIM!"}
           {keyPressNotify && "Press key F or click on your fighter for FINISH HIM!"}
-          {gameOverNotify && "GAME OVER"}
           {fighterNameNotify && `${fighterName} WINS`}
+          <div className={styles.finishHim}>
+          {isFinishHim && "Finish Him"}
+          {gameOverNotify && "GAME OVER"}
+          </div>
         </div>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>

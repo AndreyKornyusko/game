@@ -6,6 +6,8 @@ import * as API from '../../services/api';
 import scorpion from '../../assets/img/Sco.png'
 
 import sound from '../../assets/sounds/VSScreen.mp3';
+import bowMeSound from '../../assets/sounds/bow.mp3';
+import suckSound from '../../assets/sounds/suck.mp3';
 
 const DragonIcon = () => (
   <i class="fas fa-dragon fa-3x"></i>
@@ -29,7 +31,6 @@ const icons = [
 class Fighter extends Component {
   constructor(props) {
     super(props)
-    // this.handleKeyDown = this.handleKeyDown.bind(this)
     this.state = {
       cursor: 0,
       fighter: [],
@@ -41,15 +42,28 @@ class Fighter extends Component {
       loading: true,
       isQwertyClick: false,
       loaded: false,
+      isDialogSuck: false,
+      isDialogBow: false,
+      isKeyCombination: false,
+      isTitleLoad: true,
     }
   }
 
+  handleKeyDown = (e) => {
+    this.handleClickFighter(e)
+  }
+
   componentDidMount() {
-    // window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown);
 
     setTimeout(() => {
       this.setState({ loaded: true })
     }, 100);
+
+    setTimeout(() => {
+      this.setState({ isTitleLoad: false })
+    }, 2000);
+
 
 
     this.runOnKeys(
@@ -79,7 +93,7 @@ class Fighter extends Component {
 
 
   componentWillUnmount() {
-    // window.removeEventListener('keydown', this.handleKeyDown)
+    window.removeEventListener('keydown', this.handleKeyDown)
   }
 
 
@@ -118,14 +132,65 @@ class Fighter extends Component {
     this.props.history.push(from);
   }
 
+
+
   hangleIconClick = () => {
     const id = this.props.match.params.id;
     this.goToGame(id)
   }
 
 
+
+  handleClickFighter = (e) => {
+
+
+    if (e.code === "KeyB" && e.shiftKey) {
+      this.setState({ isDialogBow: true });
+
+      setTimeout(() => {
+        this.setState({ isDialogBow: false });
+      }, 1500);
+
+
+      function playAudio() {
+        const music = document.getElementById("bowMe");
+        music.play();
+      };
+
+      playAudio();
+    } else if (e.code === "KeyS" && e.shiftKey) {
+
+      this.setState({ isDialogSuck: true });
+
+      setTimeout(() => {
+        this.setState({ isDialogSuck: false });
+      }, 1500);
+
+
+      function playAudio() {
+        const music = document.getElementById("suck");
+        music.play();
+      };
+
+      playAudio();
+    }
+  }
+
   render() {
-    const { cursor, leftFighterName, rightFighterName, leftimg, rightimg, loading, isQwertyClick, loaded } = this.state
+    const { cursor,
+      leftFighterName,
+      rightFighterName,
+      leftimg,
+      rightimg,
+      loading,
+      isQwertyClick,
+      loaded,
+      isDialogSuck,
+      isDialogBow,
+      isKeyCombination,
+      isTitleLoad,
+    } = this.state
+
     const { batleNumber = "1" } = this.props;
 
     // console.log('fighter', fighter)
@@ -134,13 +199,25 @@ class Fighter extends Component {
 
     return (
       <div className={styles.fightersMainWrap}>
-        <h2 className={styles.mainTitle}>Battle {batleNumber}</h2>
+        <h2 className={styles.mainTitle}>
+          {isTitleLoad && `Battle ${batleNumber}`}
+          {!isTitleLoad && "Press Shift+B or Shift+S :)"}
+
+        </h2>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
             <h3 className={styles.FighterName}>{leftFighterName}</h3>
-            <div className={styles.fighterimgWrap}
-            >
-              <img className={styles.fighterImgLeft} src={leftimg} alt="fighter img"
+            <div className={styles.fighterimgWrap}>
+              <div className={styles.dialog}>
+                {isDialogBow && "Bow to me!"}
+                {isDialogSuck && "You suck!"}
+
+              </div>
+              <img
+                className={styles.fighterImgLeft}
+                src={leftimg}
+                alt="fighter img"
+                onClick={this.handleClickFighter}
                 style={{
                   left: loaded && '80px',
                 }}
@@ -177,6 +254,13 @@ class Fighter extends Component {
         <audio className={styles.sound} autoplay="autoplay" controls="controls">
           <source src={sound} />
         </audio>
+        <audio id="bowMe" className={styles.sound} controls="controls">
+          <source src={bowMeSound} />
+        </audio>
+        <audio id="suck" className={styles.sound} controls="controls">
+          <source src={suckSound} />
+        </audio>
+
       </div>
     )
   }
