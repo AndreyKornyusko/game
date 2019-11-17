@@ -13,7 +13,7 @@ import fightSound from '../../assets/sounds/mp3(fight)';
 import laugh from '../../assets/sounds/laugh.mp3';
 import scorpion from '../../assets/img/Sco.png';
 import scorpiondie from '../../assets/img/Scorfa.png';
-
+import db from '../../db';
 
 import StartGameLeftFighter from './StartGameLeftFighter/StartGameLeftFighter';
 import StartGameRightFighter from './StartGameRightFighter/StartGameRightFighter';
@@ -27,6 +27,7 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      fighterId: '',
       leftFighterName: '',
       rightFighterName: 'Scorpion',
       leftimg: '',
@@ -37,6 +38,7 @@ class Game extends Component {
       leftimgFinish: '',
       rightimgFinish: 'https://vignette.wikia.nocookie.net/mortalkombat/images/b/b4/Sco49.gif/revision/latest?cb=20091221132207&path-prefix=es',
       rightimgStart: scorpion,
+      fighterWinsSound: '',
 
       leftimgGameOver: '',
       rightimgGameOver: scorpiondie,
@@ -51,6 +53,19 @@ class Game extends Component {
       fighterName: "",
       isFinishHim: false,
     }
+  }
+
+  playAudio = (id) => {
+    const music = document.getElementById(id);
+    function playAudio() {
+      music.play();
+    };
+    playAudio();
+  }
+
+  stopAudio = (id) => {
+    const gameMusic = document.getElementById(id);
+    gameMusic.pause()
   }
 
   componentDidMount() {
@@ -68,11 +83,7 @@ class Game extends Component {
 
 
     setTimeout(() => {
-      const music = document.getElementById("fight");
-      function playAudio() {
-        music.play();
-      };
-      playAudio();
+      this.playAudio("fight");
     }, 2000);
 
 
@@ -84,6 +95,8 @@ class Game extends Component {
           leftimg: fighter.gameimg,
           leftimgStart: fighter.vsimg,
           fighterName: fighter.name,
+          fighterWinsSound: fighter.sound,
+          fighterId: fighter.id,
           loading: false
         });
       })
@@ -106,18 +119,8 @@ class Game extends Component {
     }, 2000);
 
 
-    function stopMusic() {
-      const gameMusic = document.getElementById("gameAudio");
-      gameMusic.pause()
-    }
-
-    function playAudio() {
-      const music = document.getElementById("finishHim");
-      music.play();
-    };
-
-    stopMusic();
-    playAudio();
+    this.stopAudio("gameAudio");
+    this.playAudio("finishHim");
 
 
     setTimeout(() => {
@@ -132,6 +135,9 @@ class Game extends Component {
 
         setTimeout(() => {
           this.setState({ fighterNameNotify: false })
+
+          this.playAudio("fighterwins");
+
         }, 2000);
 
       }, 1000);
@@ -141,13 +147,11 @@ class Game extends Component {
       }, 4000);
 
       setTimeout(() => {
-        const music = document.getElementById("laugh");
-        function playAudio() {
-          music.play();
-        };
-        playAudio();
+
+        this.playAudio("laugh");
+
       }, 2000);
-  
+
 
       setTimeout(() => {
         const { from } = {
@@ -166,9 +170,11 @@ class Game extends Component {
     }
   }
 
+
   render() {
 
     const {
+      fighterId,
       leftFighterName,
       rightFighterName,
       leftimg,
@@ -189,9 +195,11 @@ class Game extends Component {
       gameOverNotify,
       fighterNameNotify,
       fighterName,
-      isFinishHim
+      isFinishHim,
+      fighterWinsSound
 
     } = this.state;
+
 
     return (
       <div className={styles.mainWrapper}>
@@ -200,8 +208,8 @@ class Game extends Component {
           {keyPressNotify && "Press key F or click on your fighter for FINISH HIM!"}
           {fighterNameNotify && `${fighterName} WINS`}
           <div className={styles.finishHim}>
-          {isFinishHim && "Finish Him"}
-          {gameOverNotify && "GAME OVER"}
+            {isFinishHim && "Finish Him"}
+            {gameOverNotify && "GAME OVER"}
           </div>
         </div>
         <div className={styles.fightersWrap}>
@@ -266,6 +274,9 @@ class Game extends Component {
         </audio>
         <audio id="laugh" className={styles.sound} controls="controls">
           <source src={laugh} />
+        </audio>
+        <audio id="fighterwins" className={styles.sound} controls="controls">
+          <source src={fighterWinsSound} />
         </audio>
 
       </div>

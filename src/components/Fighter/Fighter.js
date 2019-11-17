@@ -53,6 +53,16 @@ class Fighter extends Component {
     this.handleClickFighter(e)
   }
 
+
+  playAudio = (id) => {
+    const music = document.getElementById(id);
+    function playAudio() {
+      music.play();
+    };
+    playAudio();
+  }
+
+
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
 
@@ -88,14 +98,12 @@ class Fighter extends Component {
       .catch(error => {
         this.setState({ error, loading: false });
       });
-
   }
 
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown)
   }
-
 
 
   runOnKeys = (func, ...codes) => {
@@ -143,7 +151,6 @@ class Fighter extends Component {
 
   handleClickFighter = (e) => {
 
-
     if (e.code === "KeyB" && e.shiftKey) {
       this.setState({ isDialogBow: true });
 
@@ -152,12 +159,7 @@ class Fighter extends Component {
       }, 1500);
 
 
-      function playAudio() {
-        const music = document.getElementById("bowMe");
-        music.play();
-      };
-
-      playAudio();
+      this.playAudio("bowMe");
     } else if (e.code === "KeyS" && e.shiftKey) {
 
       this.setState({ isDialogSuck: true });
@@ -167,12 +169,7 @@ class Fighter extends Component {
       }, 1500);
 
 
-      function playAudio() {
-        const music = document.getElementById("suck");
-        music.play();
-      };
-
-      playAudio();
+      this.playAudio("suck");
     }
   }
 
