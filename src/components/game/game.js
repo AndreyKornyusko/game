@@ -22,40 +22,6 @@ import FinishGameRightFighter from './FinishGameRightFighter/FinishGameRightFigh
 import GameOverLeftFighter from './GameOverLeftFighter/GameOverLeftFighter';
 import GameOverRightFighter from './GameOverRightFighter/GameOverRightFighter';
 
-import shangTsungSound from '../../assets/sounds/shangtsung/mp3';
-import sindelSound from '../../assets/sounds/sindel/mp3';
-import jaxSound from '../../assets/sounds/jax/mp3';
-import kanoSound from '../../assets/sounds/kano/mp3';
-import liukangSound from '../../assets/sounds/liukang/mp3';
-import sonyaSound from '../../assets/sounds/sonya/mp3';
-import strykerSound from '../../assets/sounds/stryker/mp3';
-import smokeSound from '../../assets/sounds/smoke/mp3';
-import subzeroSound from '../../assets/sounds/subzero/mp3';
-import cyraxSound from '../../assets/sounds/cyrax/mp3';
-import sektorSound from '../../assets/sounds/sektor/mp3';
-import nightwolfSound from '../../assets/sounds/nightwolf/mp3';
-import sheevaSound from '../../assets/sounds/sheeva/mp3';
-import kunglaolSound from '../../assets/sounds/kunglao/mp3';
-import kabalSound from '../../assets/sounds/kabal/mp3';
-
-
-const sounds = [
-  { id: "ShangTsung", sound: shangTsungSound, index: 0 },
-  { id: "Sindel", sound: sindelSound, index: 1 },
-  { id: "Jax", sound: jaxSound, index: 2 },
-  { id: "Kano", sound: kanoSound, index: 3 },
-  { id: "LiuKang", sound: liukangSound, index: 4 },
-  { id: "SonyaBlade", sound: sonyaSound, index: 5 },
-  { id: "Styker", sound: strykerSound, index: 6 },
-  { id: "Smoke", sound: smokeSound, index: 7 },
-  { id: "SubZero", sound: subzeroSound, index: 8 },
-  { id: "Cyrax", sound: cyraxSound, index: 9 },
-  { id: "Sektor", sound: sektorSound, index: 10 },
-  { id: "Nightwolf", sound: nightwolfSound, index: 11 },
-  { id: "Sheeva", sound: sheevaSound, index: 12 },
-  { id: "KungLao", sound: kunglaolSound, index: 13 },
-  { id: "Kabal", sound: kabalSound, index: 14 }
-]
 
 class Game extends Component {
   constructor(props) {
@@ -134,7 +100,7 @@ class Game extends Component {
     API.getFightersItemById(id)
       .then(fighter => {
 
-        const fighterSound = sounds.find(item => item.id === fighter.id);
+        const fighterSound = db.find(item => item.id === fighter.id);
 
         this.setState({
           fighter,
@@ -195,12 +161,12 @@ class Game extends Component {
 
       setTimeout(() => {
         this.setState({ gameOverNotify: true })
-      }, 4000);
+      }, 5000);
 
 
       setTimeout(() => {
         this.playAudio("laugh");
-      }, 2000);
+      }, 3000);
 
 
       setTimeout(() => {
@@ -208,7 +174,7 @@ class Game extends Component {
           from: { pathname: `${routes.MAIN}` },
         };
         this.props.history.push(from);
-      }, 6000);
+      }, 8000);
 
     }, 2200);
   }
