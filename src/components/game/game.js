@@ -31,7 +31,7 @@ class Game extends Component {
       fighterId: '',
       leftFighterName: '',
       rightFighterName: 'Scorpion',
-      leftimg: '../../assets/img/lyashko.png',
+      leftimg: '',
       rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/c/c6/Sco54.gif/revision/latest?cb=20091221132258&path-prefix=es',
       loading: true,
       isGameStart: false,
@@ -106,7 +106,7 @@ class Game extends Component {
         this.setState({
           fighter,
           leftFighterName: fighter.name,
-          // leftimg: fighter.gameimg,
+          leftimg: fighter.gameimg,
           leftimgStart: fighter.vsimg,
           fighterName: fighter.name,
           fighterWinsSound: fighterSound.sound,
