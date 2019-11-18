@@ -9,7 +9,7 @@ import * as API from '../../services/api';
 import sound from '../../assets/sounds/game.mp3';
 import roundone from '../../assets/sounds/mp3';
 import finishSound from '../../assets/sounds/FinishHim.mp3';
-import fightSound from '../../assets/sounds/mp3(fight)';
+import fightSound from '../../assets/sounds/fight/mp3';
 import laugh from '../../assets/sounds/laugh.mp3';
 import scorpion from '../../assets/img/Sco.png';
 import scorpiondie from '../../assets/img/Scorfa.png';
@@ -22,6 +22,40 @@ import FinishGameRightFighter from './FinishGameRightFighter/FinishGameRightFigh
 import GameOverLeftFighter from './GameOverLeftFighter/GameOverLeftFighter';
 import GameOverRightFighter from './GameOverRightFighter/GameOverRightFighter';
 
+import shangTsungSound from '../../assets/sounds/shangtsung/mp3';
+import sindelSound from '../../assets/sounds/sindel/mp3';
+import jaxSound from '../../assets/sounds/jax/mp3';
+import kanoSound from '../../assets/sounds/kano/mp3';
+import liukangSound from '../../assets/sounds/liukang/mp3';
+import sonyaSound from '../../assets/sounds/sonya/mp3';
+import strykerSound from '../../assets/sounds/stryker/mp3';
+import smokeSound from '../../assets/sounds/smoke/mp3';
+import subzeroSound from '../../assets/sounds/subzero/mp3';
+import cyraxSound from '../../assets/sounds/cyrax/mp3';
+import sektorSound from '../../assets/sounds/sektor/mp3';
+import nightwolfSound from '../../assets/sounds/nightwolf/mp3';
+import sheevaSound from '../../assets/sounds/sheeva/mp3';
+import kunglaolSound from '../../assets/sounds/kunglao/mp3';
+import kabalSound from '../../assets/sounds/kabal/mp3';
+
+
+const sounds = [
+  { id: "ShangTsung", sound: shangTsungSound, index: 0 },
+  { id: "Sindel", sound: sindelSound, index: 1 },
+  { id: "Jax", sound: jaxSound, index: 2 },
+  { id: "Kano", sound: kanoSound, index: 3 },
+  { id: "LiuKang", sound: liukangSound, index: 4 },
+  { id: "SonyaBlade", sound: sonyaSound, index: 5 },
+  { id: "Styker", sound: strykerSound, index: 6 },
+  { id: "Smoke", sound: smokeSound, index: 7 },
+  { id: "SubZero", sound: subzeroSound, index: 8 },
+  { id: "Cyrax", sound: cyraxSound, index: 9 },
+  { id: "Sektor", sound: sektorSound, index: 10 },
+  { id: "Nightwolf", sound: nightwolfSound, index: 11 },
+  { id: "Sheeva", sound: sheevaSound, index: 12 },
+  { id: "KungLao", sound: kunglaolSound, index: 13 },
+  { id: "Kabal", sound: kabalSound, index: 14 }
+]
 
 class Game extends Component {
   constructor(props) {
@@ -63,6 +97,16 @@ class Game extends Component {
     playAudio();
   }
 
+
+  loadAudio = (id) => {
+    const music = document.getElementById(id);
+    function loadAudio() {
+      music.load();
+    };
+    loadAudio();
+  }
+
+
   stopAudio = (id) => {
     const gameMusic = document.getElementById(id);
     gameMusic.pause()
@@ -89,13 +133,16 @@ class Game extends Component {
 
     API.getFightersItemById(id)
       .then(fighter => {
+
+        const fighterSound = sounds.find(item => item.id === fighter.id);
+
         this.setState({
           fighter,
           leftFighterName: fighter.name,
           leftimg: fighter.gameimg,
           leftimgStart: fighter.vsimg,
           fighterName: fighter.name,
-          fighterWinsSound: fighter.sound,
+          fighterWinsSound: fighterSound.sound,
           fighterId: fighter.id,
           loading: false
         });
@@ -104,6 +151,7 @@ class Game extends Component {
         this.setState({ error, loading: false });
       });
   }
+
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown)
@@ -130,26 +178,28 @@ class Game extends Component {
         this.setState({ isFall: true })
       }, 5);
 
+
       setTimeout(() => {
-        this.setState({ fighterNameNotify: true })
+        this.setState({ fighterNameNotify: true });
+        this.loadAudio("fighterwins");
+        this.playAudio("fighterwins");
 
         setTimeout(() => {
           this.setState({ fighterNameNotify: false })
 
-          this.playAudio("fighterwins");
 
         }, 2000);
 
       }, 1000);
 
+
       setTimeout(() => {
         this.setState({ gameOverNotify: true })
       }, 4000);
 
+
       setTimeout(() => {
-
         this.playAudio("laugh");
-
       }, 2000);
 
 
@@ -275,7 +325,8 @@ class Game extends Component {
         <audio id="laugh" className={styles.sound} controls="controls">
           <source src={laugh} />
         </audio>
-        <audio id="fighterwins" className={styles.sound} controls="controls">
+
+        <audio id="fighterwins" className={styles.sound} controls="controls" preload="none">
           <source src={fighterWinsSound} />
         </audio>
 
