@@ -21,6 +21,7 @@ import FinishGameLeftFighter from './FinishGameLeftFighter/FinishGameLeftFighter
 import FinishGameRightFighter from './FinishGameRightFighter/FinishGameRightFighter';
 import GameOverLeftFighter from './GameOverLeftFighter/GameOverLeftFighter';
 import GameOverRightFighter from './GameOverRightFighter/GameOverRightFighter';
+import layshko from '../../assets/img/lyashko.png';
 
 
 class Game extends Component {
@@ -30,7 +31,7 @@ class Game extends Component {
       fighterId: '',
       leftFighterName: '',
       rightFighterName: 'Scorpion',
-      leftimg: '',
+      leftimg: '../../assets/img/lyashko.png',
       rightimg: 'https://vignette.wikia.nocookie.net/mortalkombat/images/c/c6/Sco54.gif/revision/latest?cb=20091221132258&path-prefix=es',
       loading: true,
       isGameStart: false,
@@ -105,7 +106,7 @@ class Game extends Component {
         this.setState({
           fighter,
           leftFighterName: fighter.name,
-          leftimg: fighter.gameimg,
+          // leftimg: fighter.gameimg,
           leftimgStart: fighter.vsimg,
           fighterName: fighter.name,
           fighterWinsSound: fighterSound.sound,
