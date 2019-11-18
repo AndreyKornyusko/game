@@ -113,7 +113,7 @@ class FighterList extends Component {
   }
 
   handleFighterClick = (e) => {
-    console.log('e target', e.target)
+    // console.log('e target', e.target)
     const id = e.target.id;
     // console.log('id',id)
 

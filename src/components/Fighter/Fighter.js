@@ -78,7 +78,7 @@ class Fighter extends Component {
 
     this.runOnKeys(
       () => {
-        this.setState({ isQwertyClick: true });
+        this.setState(prevState =>({ isQwertyClick: !prevState.isQwertyClick }));
       },
       "KeyQ",
       "KeyW",
@@ -196,11 +196,12 @@ class Fighter extends Component {
 
     return (
       <div className={styles.fightersMainWrap}>
-        <h2 className={styles.mainTitle}>
+        <div className={styles.mainTitle}>
           {isTitleLoad && `Battle ${batleNumber}`}
-          {!isTitleLoad && "Press Shift+B or Shift+S :)"}
-
-        </h2>
+          <div className= {styles.notify}>
+            {!isTitleLoad && "Turn on the sound and press Shift+B or Shift+S :)"}
+          </div>
+        </div>
         <div className={styles.fightersWrap}>
           <div className={styles.leftFighter}>
             <h3 className={styles.FighterName}>{leftFighterName}</h3>

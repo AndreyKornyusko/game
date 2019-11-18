@@ -45,6 +45,16 @@
   font-size: 45px;
   text-transform: uppercase;
   font-style: italic;
+  height: 45px;
+}
+
+.notify {
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 .userName {
