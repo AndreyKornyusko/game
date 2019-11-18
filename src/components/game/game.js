@@ -100,7 +100,6 @@ class Game extends Component {
 
     API.getFightersItemById(id)
       .then(fighter => {
-
         const fighterSound = db.find(item => item.id === fighter.id);
 
         this.setState({
