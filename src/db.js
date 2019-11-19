@@ -1,5 +1,5 @@
 import shangTsungSound from './assets/sounds/shangtsung/mp3';
-import sindelSound from './assets/sounds/jax/mp3';
+import sindelSound from './assets/sounds/sindel/mp3';
 import jaxSound from './assets/sounds/jax/mp3';
 import kanoSound from './assets/sounds/kano/mp3';
 import liukangSound from './assets/sounds/liukang/mp3';
