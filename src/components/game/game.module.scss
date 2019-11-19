@@ -20,7 +20,7 @@
   }
 
   @media screen and (min-width: 960px) {
-    padding-top: 50px;
+    padding-top: 0px;
     background-image: url('../../assets/img/bg.jpg');
   }
 
@@ -30,7 +30,7 @@
   }
 
   @media screen and (min-width: 2560px) {
-    padding-top: 550px;
+    padding-top: 350px;
   }
 
 }
@@ -53,8 +53,14 @@
 
   @media screen and (min-width: 960px) {
     margin-bottom: 20px;
-    font-size: 60px;
+    font-size: 50px;
   }
+
+  @media screen and (min-width: 2560px) {
+    margin-bottom: 250px;
+    font-size: 80px;
+  }
+
 }
 
 .notify {
@@ -78,8 +84,20 @@
   }
 
   @media screen and (min-width: 960px) {
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: 1680px) {
+    margin-bottom: 50px;
     font-size: 50px;
   }
+
+  @media screen and (min-width: 2560px) {
+    margin-bottom: 250px;
+    font-size: 70px;
+  }
+
 }
 
 .finishHim {
@@ -101,6 +119,11 @@
   @media screen and (min-width: 960px) {
     font-size: 50px;
   }
+
+  @media screen and (min-width: 2560px) {
+    font-size: 70px;
+  }
+
 }
 
 .fightersWrap {
