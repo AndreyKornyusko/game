@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import styles from './start.module.css';
+import styles from './start.module.scss';
 import routes from '../../configs/routes';
 
 import sound from '../../assets/sounds/VSScreen.mp3';

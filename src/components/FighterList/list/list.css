@@ -1,18 +1,22 @@
 .fighterList {
   display: flex;
   flex-wrap: wrap;
-  width: 700px;
-  min-width: 700px;
-  /* margin: 0 auto; */
-  margin-left: 30px;
-  margin-right: 30px;
+  width: 290px;
+  min-width: 290px;
+  margin: 0 auto;
+  margin-left: 10px;
+  margin-right: 10px;
   list-style: none;
   background-color: rgb(110, 109, 109);
 }
 
 @keyframes animationBg {
-  from { background-color: transparent; }
-  to {   background-color: rgb(24, 230, 75);}
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgb(24, 230, 75);
+  }
 }
 
 .item,
@@ -22,8 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
+  width: 58px;
+  height: 58px;
 }
 
 .item {
@@ -32,15 +36,48 @@
 
 .activeItem {
   animation: animationBg 900ms infinite cubic-bezier(1, 1, 1, 1);
-  /* background-color: rgb(24, 230, 75); */
 }
 
 .imgWrap {
-  width: 120px;
-  height: 120px;
+  width: 52px;
+  height: 52px;
 }
 
 .fighterImage {
-  width: 120px;
-  height: 120px;
+  width: 52px;
+  height: 52px;
+}
+
+@media screen and (min-width: 480px) {
+  .fighterList {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fighterList {
+    width: 700px;
+    min-width: 700px;
+    margin: none;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .item,
+  .activeItem {
+    width: 140px;
+    height: 140px;
+  }
+
+
+  .imgWrap {
+    width: 120px;
+    height: 120px;
+  }
+
+  .fighterImage {
+    width: 120px;
+    height: 120px;
+  }
 }

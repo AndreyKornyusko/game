@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './game.module.css';
+import styles from './game.module.scss';
 
 import { withRouter } from 'react-router-dom';
 import routes from '../../configs/routes';

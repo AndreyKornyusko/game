@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import styles from './FighterList.module.css';
+import styles from './FighterList.module.scss';
 
 import List from '../FighterList/list/List';
 

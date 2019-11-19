@@ -1,0 +1,26 @@
+.mainWrap {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(../../assets/img/bg1-320.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (min-width:420px) {
+    background-image: url(../../assets/img/bg1-480.jpg);
+  }
+
+  @media screen and (min-width:768px) {
+    background-image: url(../../assets/img/bg1-768.jpg);
+  }
+
+  @media screen and (min-width:960px) {
+    background-image: url(../../assets/img/bg1.jpg);
+  }
+
+}
+
+.sound {
+  display: none;
+}

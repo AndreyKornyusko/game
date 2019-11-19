@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import styles from './Fighter.module.css';
+import styles from './Fighter.module.scss';
 import routes from '../../configs/routes';
 import * as API from '../../services/api';
 import scorpion from '../../assets/img/Sco.png'
