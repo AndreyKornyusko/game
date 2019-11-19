@@ -10,6 +10,7 @@
   background-position: center;
 
   @media screen and (min-width: 420px) {
+    padding-top: 15px;
     background-image: url('../../assets/img/vsbg480.jpg');
   }
 
@@ -25,7 +26,6 @@
   @media screen and (min-width: 1680px) {
     padding-top: 150px;
   }
-
 }
 
 .dragonIcon {
@@ -58,7 +58,9 @@
 
 .imgWrap {
   display: none;
-
+  &:hover {
+    background-color: rgb(233, 230, 229);
+  }
   @media screen and (min-width: 960px) {
     display: flex;
     justify-content: center;
@@ -91,9 +93,9 @@
   }
 }
 
-.imgWrap:hover {
-  background-color: rgb(233, 230, 229);
-}
+// .imgWrap:hover {
+//   background-color: rgb(233, 230, 229);
+// }
 
 .mainTitle {
   text-align: center;
@@ -104,6 +106,11 @@
   text-transform: uppercase;
   font-style: italic;
   height: 24px;
+
+  @media screen and (min-width: 480px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 30px;
@@ -127,6 +134,10 @@
   margin-right: 20px;
   margin-left: 20px;
 
+  @media screen and (min-width: 480px) {
+    font-size: 20px;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 26px;
   }
@@ -144,7 +155,7 @@
   font-style: italic;
   margin-right: 20px;
   margin-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 
   @media screen and (min-width: 960px) {
     display: none;
@@ -164,6 +175,13 @@
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 30px;
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 5px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
 }
 
 .FighterName {
@@ -198,12 +216,10 @@
 
   @media screen and (min-width: 1680px) {
     width: 450px;
-
   }
 
   @media screen and (min-width: 2560px) {
     width: 650px;
-
   }
 }
 
@@ -223,13 +239,11 @@
 
   @media screen and (min-width: 1680px) {
     width: 280px;
-
   }
 
   @media screen and (min-width: 2560px) {
     width: 450px;
   }
-
 }
 
 .dialog {
@@ -239,7 +253,6 @@
   background-color: #fff;
   font-size: 24px;
 }
-
 
 .fighterImgLeft {
   position: relative;
@@ -265,13 +278,11 @@
 
   @media screen and (min-width: 1680px) {
     width: 280px;
-
   }
 
   @media screen and (min-width: 2560px) {
     width: 450px;
   }
-
 }
 
 .fighterImgRight {
@@ -292,16 +303,12 @@
 
   @media screen and (min-width: 1680px) {
     width: 260px;
-
   }
 
   @media screen and (min-width: 2560px) {
     width: 430px;
   }
-
 }
-
-
 
 .fighterImgRightMobile {
   height: auto;

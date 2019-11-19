@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 100%;
   min-height: 100vh;
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 40px;
   background-image: url('../../assets/img/bg320.jpg');
   background-size: cover;
@@ -20,7 +20,7 @@
   }
 
   @media screen and (min-width: 960px) {
-    padding-top: 0px;
+    padding-top: 120px;
     background-image: url('../../assets/img/bg.jpg');
   }
 
@@ -35,51 +35,53 @@
 
 }
 
-.title {
-  color: rgb(236, 46, 46);
-  text-align: center;
-  font-size: 30px;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  font-weight: bold;
+// .title {
+//   color: rgb(236, 46, 46);
+//   text-align: center;
+//   font-size: 30px;
+//   margin: 0 auto;
+//   margin-bottom: 60px;
+//   font-weight: bold;
 
-  @media screen and (min-width: 420px) {
-    font-size: 34px;
-  }
+//   @media screen and (min-width: 420px) {
+//     font-size: 34px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    font-size: 40px;
-  }
+//   @media screen and (min-width: 768px) {
+//     font-size: 40px;
+//   }
 
-  @media screen and (min-width: 960px) {
-    margin-bottom: 20px;
-    font-size: 50px;
-  }
+//   @media screen and (min-width: 960px) {
+//     margin-bottom: 20px;
+//     font-size: 50px;
+//   }
 
-  @media screen and (min-width: 2560px) {
-    margin-bottom: 250px;
-    font-size: 80px;
-  }
+//   @media screen and (min-width: 2560px) {
+//     margin-bottom: 250px;
+//     font-size: 80px;
+//   }
 
-}
+// }
 
 .notify {
   height: 40px;
   color: rgb(245, 120, 18);
   text-align: center;
-  font-size: 26px;
+  font-size: 22px;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
   margin-bottom: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 130px;
   font-family: 'Trade Winds', cursive;
 
   @media screen and (min-width: 420px) {
-    font-size: 28px;
+    margin-bottom: 20px;
+    font-size: 22px;
   }
 
   @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
     font-size: 40px;
   }
 
