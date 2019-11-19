@@ -52,6 +52,21 @@
 }
 
 .imgWrap {
+  display: none;
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(185, 182, 180);
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+}
+
+.imgWrapMobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,9 +81,8 @@
     height: 30px;
   }
 
-  @media screen and (min-width: 768px) {
-    width: 60px;
-    height: 60px;
+  @media screen and (min-width: 960px) {
+    display: none;
   }
 }
 
@@ -79,7 +93,7 @@
 .mainTitle {
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   color: #fff;
   font-size: 24px;
   text-transform: uppercase;
@@ -105,6 +119,8 @@
   font-size: 22px;
   text-transform: uppercase;
   font-style: italic;
+  margin-right: 20px;
+  margin-left: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 26px;
@@ -112,6 +128,21 @@
 
   @media screen and (min-width: 960px) {
     font-size: 35px;
+  }
+}
+
+.continueMobile {
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+
+  @media screen and (min-width: 960px) {
+    display: none;
   }
 }
 
@@ -164,12 +195,11 @@
 .fighterimgWrap {
   position: relative;
   width: 70px;
-  /* height: 300px; */
   background-repeat: no-repeat;
   background-size: contain;
 
   @media screen and (min-width: 768px) {
-    width: 80px;
+    width: 100px;
   }
 
   @media screen and (min-width: 960px) {
@@ -185,61 +215,77 @@
   font-size: 24px;
 }
 
-@keyframes fighterRight {
-  from {
-    transform: translate(0);
-  }
-  to {
-    transform: translate(-120px, 0);
-  }
-}
 
-@keyframes fighterLeft {
-  0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(120px, 0);
-  }
-  100% {
-    transform: translate(130px, 0);
-  }
+.fighterImgLeft {
+  position: relative;
+  left: 0;
+  width: 70px;
+  transition: left 1s cubic-bezier(0, 0, 1, 1);
 }
 
 .fighterImgRight,
 .fighterImgLeft {
-  display: block;
-  width: 60px;
+  display: none;
+  width: 70px;
   height: auto;
 
   @media screen and (min-width: 768px) {
-    width: 80px;
+    width: 100px;
   }
 
   @media screen and (min-width: 960px) {
+    display: block;
     width: 150px;
   }
 }
 
 .fighterImgRight {
   position: relative;
+  display: none;
   right: 0;
   width: 70px;
-  /* animation: fighterRight 1000ms infinite linear; */
   transition: right 1s cubic-bezier(0, 0, 1, 1);
 
   @media screen and (min-width: 768px) {
-    width: 80px;
+    width: 100px;
   }
 
   @media screen and (min-width: 960px) {
+    display: block;
     width: 130px;
   }
 }
 
-.fighterImgLeft {
+
+
+.fighterImgRightMobile {
+  height: auto;
+  position: relative;
+  right: 0;
+  width: 70px;
+  transition: right 1s cubic-bezier(0, 0, 1, 1);
+
+  @media screen and (min-width: 768px) {
+    width: 100px;
+  }
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
+}
+
+.fighterImgLeftMobile {
+  width: 75px;
+  height: auto;
   position: relative;
   left: 0;
-  /* animation: fighterLeft 500ms linear; */
   transition: left 1s cubic-bezier(0, 0, 1, 1);
+
+  @media screen and (min-width: 768px) {
+    width: 100px;
+  }
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
 }

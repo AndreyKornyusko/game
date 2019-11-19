@@ -17,6 +17,15 @@ const InYang = () => (
   <i class="fas fa-yin-yang fa-3x"></i>
 )
 
+const DragonIconMobile = () => (
+  <i class="fas fa-dragon fa-sm"></i>
+)
+
+const InYangMobile = () => (
+  <i class="fas fa-yin-yang fa-sm"></i>
+)
+
+
 const icons = [
   { id: 1 },
   { id: 2 },
@@ -78,7 +87,7 @@ class Fighter extends Component {
 
     this.runOnKeys(
       () => {
-        this.setState(prevState =>({ isQwertyClick: !prevState.isQwertyClick }));
+        this.setState(prevState => ({ isQwertyClick: !prevState.isQwertyClick }));
       },
       "KeyQ",
       "KeyW",
@@ -198,7 +207,7 @@ class Fighter extends Component {
       <div className={styles.fightersMainWrap}>
         <div className={styles.mainTitle}>
           {isTitleLoad && `Battle ${batleNumber}`}
-          <div className= {styles.notify}>
+          <div className={styles.notify}>
             {!isTitleLoad && "Turn on the sound and press Shift+B or Shift+S :)"}
           </div>
         </div>
@@ -211,6 +220,17 @@ class Fighter extends Component {
                 {isDialogSuck && "You suck!"}
 
               </div>
+
+              <img
+                className={styles.fighterImgLeftMobile}
+                src={leftimg}
+                alt="fighter img"
+                onClick={this.handleClickFighter}
+                style={{
+                  left: loaded && '25px',
+                }}
+              />
+
               <img
                 className={styles.fighterImgLeft}
                 src={leftimg}
@@ -225,15 +245,29 @@ class Fighter extends Component {
           <div className={styles.rightFighter}>
             <h3 className={styles.FighterName}>{rightFighterName}</h3>
             <div className={styles.fighterimgWrap}>
-              <img className={styles.fighterImgRight} src={rightimg} alt="fighter img"
+
+              <img
+                className={styles.fighterImgRightMobile}
+                src={rightimg}
+                alt="fighter img"
+                style={{
+                  right: loaded && '25px',
+                }}
+              />
+
+              <img
+                className={styles.fighterImgRight}
+                src={rightimg}
+                alt="fighter img"
                 style={{
                   right: loaded && '60px',
                 }}
-
               />
             </div>
           </div>
         </div>
+
+        <div className={styles.continueMobile}>Press on dragon for continue</div>
         <ul className={styles.iconList}>
           {
             icons.map((item, i) => (
@@ -242,6 +276,10 @@ class Fighter extends Component {
                 key={item.id}
                 className={cursor === i ? 'activeIcon' : 'icon'}
               >
+                <div className={styles.imgWrapMobile} onClick={this.hangleIconClick}>
+                  {!isQwertyClick ? <DragonIconMobile /> : <InYangMobile />}
+                </div>
+
                 <div className={styles.imgWrap} onClick={this.hangleIconClick}>
                   {!isQwertyClick ? <DragonIcon /> : <InYang />}
                 </div>
