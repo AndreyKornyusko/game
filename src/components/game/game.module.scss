@@ -1,9 +1,8 @@
-
-.mainWrapper{
+.mainWrapper {
   margin: 0 auto;
   width: 100%;
   min-height: 100vh;
-  padding-top: 90px;
+  padding-top: 130px;
   padding-bottom: 40px;
   background-image: url('../../assets/img/bg320.jpg');
   background-size: cover;
@@ -11,6 +10,7 @@
   background-position: center;
 
   @media screen and (min-width: 420px) {
+    padding-top: 80px;
     background-image: url('../../assets/img/bg480.jpg');
   }
 
@@ -19,9 +19,9 @@
   }
 
   @media screen and (min-width: 960px) {
+    padding-top: 90px;
     background-image: url('../../assets/img/bg.jpg');
   }
-
 }
 
 .title {
@@ -29,7 +29,7 @@
   text-align: center;
   font-size: 30px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   font-weight: bold;
 
   @media screen and (min-width: 420px) {
@@ -41,9 +41,9 @@
   }
 
   @media screen and (min-width: 960px) {
+    margin-bottom: 20px;
     font-size: 60px;
   }
-
 }
 
 .notify {
@@ -69,7 +69,6 @@
   @media screen and (min-width: 960px) {
     font-size: 50px;
   }
-
 }
 
 .finishHim {
@@ -91,9 +90,7 @@
   @media screen and (min-width: 960px) {
     font-size: 50px;
   }
-
 }
-
 
 .fightersWrap {
   display: flex;
@@ -115,7 +112,6 @@
   @media screen and (min-width: 960px) {
     font-size: 26px;
   }
-
 }
 
 .leftFighter,
@@ -137,7 +133,6 @@
   @media screen and (min-width: 960px) {
     width: 300px;
   }
-
 }
 
 .fighterimgWrap {
@@ -156,11 +151,9 @@
   @media screen and (min-width: 960px) {
     width: 150px;
   }
-
 }
 
 @keyframes fighterRight {
-
   0% {
     transform: translate(0);
   }
@@ -184,8 +177,32 @@
   }
 }
 
-.fighterImgRight,
-.fighterImgLeft {
+@keyframes fighterRightMobile {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-70px, 0);
+  }
+  100% {
+    transform: translate(-70px, -20px);
+  }
+}
+
+@keyframes fighterLeftMobile {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(80px, -20px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.fighterImgRightMobile,
+.fighterImgLeftMobile {
   display: block;
   width: 60px;
   height: auto;
@@ -199,9 +216,30 @@
   }
 
   @media screen and (min-width: 960px) {
+    display: none;
+  }
+}
+
+.fighterImgRight,
+.fighterImgLeft {
+  height: auto;
+  display: none;
+  @media screen and (min-width: 960px) {
+    display: block;
     width: 150px;
   }
+}
 
+.fighterImgLeftMobile {
+  position: relative;
+  left: 0;
+  animation: fighterLeftMobile 1200ms infinite cubic-bezier(0, 0, 1, 1);
+}
+
+.fighterImgRightMobile {
+  position: relative;
+  right: 0;
+  animation: fighterRightMobile 1200ms infinite cubic-bezier(0, 0, 1, 1);
 }
 
 .fighterImgRight {
@@ -215,7 +253,6 @@
   left: 0;
   animation: fighterLeft 1200ms infinite cubic-bezier(0, 0, 1, 1);
 }
-
 
 .sound {
   display: none;
