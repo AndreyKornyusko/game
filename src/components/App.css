@@ -1,5 +1,6 @@
 .mainWrapper {
   width: 100%;
+  min-width: 320px;
   /* padding-top: 30px;
   padding-bottom: 30px; */
   background-color: rgb(110, 109, 109);

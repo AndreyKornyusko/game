@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './StartGameLeftFighter.module.css';
+import styles from './StartGameLeftFighter.module.scss';
 
 const StartGameLeftFighter = ({img}) => (
   <div className={styles.fighterimgWrap}>

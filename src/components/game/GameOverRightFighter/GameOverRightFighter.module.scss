@@ -1,0 +1,50 @@
+.fighterImgRight {
+  width: 80px;
+  height: auto;
+
+  @media screen and (min-width: 420px) {
+    width: 100px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 100px;
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 300px;
+  }
+}
+
+.fighterImgRight,
+.fighterImgRightMobile {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  transition: right 0.5s cubic-bezier(0, 0, 1, 1);
+}
+
+.fighterImgRight {
+  display: none;
+  @media screen and (min-width: 960px) {
+    display: block;
+  }
+}
+
+.fighterImgRightMobile {
+
+  display: block;
+  width: 100px;
+  height: auto;
+
+  @media screen and (min-width: 420px) {
+    width: 130px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 170px;
+  }
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
+}
