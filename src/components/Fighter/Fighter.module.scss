@@ -21,6 +21,11 @@
   @media screen and (min-width: 960px) {
     background-image: url('../../assets/img/vsbg.jpg');
   }
+
+  @media screen and (min-width: 1680px) {
+    padding-top: 150px;
+  }
+
 }
 
 .dragonIcon {
@@ -190,6 +195,16 @@
   @media screen and (min-width: 960px) {
     width: 350px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 450px;
+
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 650px;
+
+  }
 }
 
 .fighterimgWrap {
@@ -205,6 +220,16 @@
   @media screen and (min-width: 960px) {
     width: 150px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 280px;
+
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 450px;
+  }
+
 }
 
 .dialog {
@@ -237,6 +262,16 @@
     display: block;
     width: 150px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 280px;
+
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 450px;
+  }
+
 }
 
 .fighterImgRight {
@@ -254,6 +289,16 @@
     display: block;
     width: 130px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 260px;
+
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 430px;
+  }
+
 }
 
 

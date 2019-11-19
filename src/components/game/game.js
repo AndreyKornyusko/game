@@ -252,6 +252,13 @@ class Game extends Component {
                       onClick={this.handleClick}
                     />
 
+                    <img className={styles.fighterImgLeftTablet}
+                      src={leftimg}
+                      alt="fighter img"
+                      onClick={this.handleClick}
+                    />
+
+
                   </div>
                 )
               ) :
@@ -279,6 +286,10 @@ class Game extends Component {
                       alt="fighter img"
                     />
                     <img className={styles.fighterImgRightMobile}
+                      src={rightimg}
+                      alt="fighter img"
+                    />
+                    <img className={styles.fighterImgRightTablet}
                       src={rightimg}
                       alt="fighter img"
                     />

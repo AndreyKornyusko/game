@@ -22,6 +22,11 @@
   @media screen and (min-width: 960px) {
     background-image: url(../../assets/img/vsbg.jpg);
   }
+
+
+  @media screen and (min-width: 1680px) {
+    padding-top: 150px;
+  }
 }
 
 .mainTitle {
@@ -95,6 +100,15 @@
     display: flex;
     width: 150px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 280px;
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 350px;
+  }
+
 }
 
 .fighterimgWrap {
@@ -109,6 +123,19 @@
     width: 150px;
     height: 300px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 280px;
+    height: 560px;
+
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 350px;
+    height: 700px;
+
+  }
+
 }
 
 .fighterImg {
@@ -120,6 +147,15 @@
     display: block;
     width: 150px;
   }
+
+  @media screen and (min-width: 1680px) {
+    width: 280px;
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 350px;
+  }
+
 }
 
 .sound {

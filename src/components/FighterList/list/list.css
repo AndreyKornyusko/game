@@ -81,3 +81,33 @@
     height: 120px;
   }
 }
+
+@media screen and (min-width: 1680px) {
+  .fighterList {
+    width: 1000px;
+    height: auto;
+    min-width: 1000px;
+    margin: none;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+  }
+
+  .item,
+  .activeItem {
+    width: 200px;
+    height: 200px;
+  }
+
+
+  .imgWrap {
+    width: 180px;
+    height: 180px;
+  }
+
+  .fighterImage {
+    width: 180px;
+    height: 180px;
+  }
+}
+
