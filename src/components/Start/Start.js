@@ -8,6 +8,23 @@ import sound from '../../assets/sounds/VSScreen.mp3';
 
 class Start extends Component {
 
+  loadAudio = (id) => {
+    const music = document.getElementById(id);
+    function loadAudio() {
+      music.load();
+    };
+    loadAudio();
+  }
+
+
+  playAudio = (id) => {
+    const music = document.getElementById(id);
+    function playAudio() {
+      music.play();
+    };
+    playAudio();
+  }
+
   componentDidMount() {
     const id = this.props.match.params.id;
 
@@ -15,6 +32,9 @@ class Start extends Component {
       this.goToGame(id)
     }, 5000);
 
+
+    this.loadAudio("startsound");
+    this.playAudio("startsound");
   }
 
   goToGame = (id) => {
@@ -30,7 +50,11 @@ class Start extends Component {
     return (
       <div className={styles.MainWrap}>
         <h1 className={styles.title}>welcome to mortal combat</h1>
-        <audio id="startsound" className={styles.sound} autoplay="autoplay" controls="controls">
+        <audio
+          id="startsound"
+          className={styles.sound}
+          autoplay="autoplay"
+          controls="controls">
           <source src="https://d1490khl9dq1ow.cloudfront.net/audio/sfx/mp3preview/BsTwCwBHBjzwub4i4/jg-032316-sfx-huge-gong_NWM.mp3" />
         </audio>
       </div>

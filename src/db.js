@@ -8,7 +8,7 @@ import strykerSound from './assets/sounds/stryker/mp3';
 import smokeSound from './assets/sounds/smoke/mp3';
 import subzeroSound from './assets/sounds/subzero/mp3';
 import cyraxSound from './assets/sounds/cyrax/mp3';
-import sektorSound from './assets/sounds/sektor/mp3';
+import sektorSound from './assets/sounds/sektor/skot.mp4';
 import nightwolfSound from './assets/sounds/nightwolf/mp3';
 import sheevaSound from './assets/sounds/sheeva/mp3';
 import kunglaolSound from './assets/sounds/kunglao/mp3';

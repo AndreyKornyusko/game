@@ -30,6 +30,15 @@ class FighterList extends Component {
     }
   }
 
+
+  loadAudio = (id) => {
+    const music = document.getElementById(id);
+    function loadAudio() {
+      music.load();
+    };
+    loadAudio();
+  }
+
   goToGame = (id) => {
     const { from } = {
       from: { pathname: `${routes.GAME}/${id}` },
@@ -62,6 +71,8 @@ class FighterList extends Component {
     function playAudio() {
       music.play();
     };
+
+    this.loadAudio("myAudio");
     playAudio()
   }
 
@@ -166,7 +177,11 @@ class FighterList extends Component {
           </div>
         </div>
 
-        <audio id="myAudio" className={styles.sound} autoplay="autoplay" controls="controls">
+        <audio
+          id="myAudio"
+          className={styles.sound}
+          autoplay="autoplay"
+          controls="controls">
           <source src={sound} />
         </audio>
       </div >
